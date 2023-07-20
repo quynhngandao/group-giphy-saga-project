@@ -15,19 +15,37 @@ import axios from 'axios';
 
 // Saga root generator function
 function* rootSaga() {
-
-
+    yield takeLatest('SEARCH_GIPHY', searchGiphy)
+    yield takeLatest('ADD_FAVORITE', addFavorite)
+    yield takeLatest('FETCH_FAVORITE_LIST', fetchFavoriteList)
+    yield takeLatest('FETCH_CATEGORY_LIST', fetchCategoryList)
+    yield takeLatest('UPDATE_CATEGORY', updateCategory)
+    yield takeLatest('REMOVE_FAVORITE', removeFavorite)
 }; // end rootSaga
 
 
 // SAGAS
 
+// TODO - GET (from Giphy) - get request (from giphy api)
 
+// TODO - POST add favorite (post to DB)
+
+// TODO - GET fetch favorite list (from DB)
+
+// TODO - GET fetch category list
+
+// TODO - PUT update category of a favorite gif
+
+// TODO - DELETE remove a favorite gif
 
 
 // REDUCERS
 
+// TODO - STORE (Giphy results) - store giphy search results (from Giphy)
 
+// TODO - STORE storing list of favorite gifs (from DB)
+
+// TODO - STORE list of categories (from DB)
 
 
 
