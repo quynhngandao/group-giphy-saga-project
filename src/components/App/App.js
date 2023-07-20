@@ -1,10 +1,9 @@
-import React from 'react';
+import Home from "../Home/Home";
+import './App.css'
 
-function App(props) {
+function App() {
   return (
-    <div>
-      <h1>Giphy Search!</h1>
-    </div>
+   <Home/>
   );
 }
 
