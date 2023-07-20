@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   //return favorite images 
   console.log('in /api/favorite');
-  const queryText = `SELECT * FROM gif ORDER BY name;`
+  const queryText = `SELECT * FROM category ORDER BY name;`
   pool.query(queryText)
   .then((results) => {
     res.send(results.rows)
@@ -23,11 +23,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   console.log('inside of /api/favorite post, req.body' , req.body);
   let url = req.body
+  let title = req.body
   //query text for data fields and sql injection 
-  const queryText = `INSERT INTO "gif" (path)
-  VALUES($1)`
+  const queryText = `INSERT INTO "gif" (path,title)
+  VALUES($1, $2)`
   //redeclaring data fields 
-  const queryParams = [url]
+  const queryParams = [url, title]
   //bringing in pool 
   pool.query(queryText, queryParams)
     .then((results) => {
