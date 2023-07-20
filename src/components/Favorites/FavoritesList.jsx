@@ -1,5 +1,5 @@
 import * as React from "react";
-// Import Material UI
+// Importing Material UI
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,8 +8,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 // Importing CSS
 import "../App/App.css";
+// Importing Components
+import FavoritedGIF from "./FavoritedGIF";
 
-// Favorites Component
 function Favorites() {
   const gifFavoriteArray = [
     {
@@ -38,29 +39,11 @@ function Favorites() {
   return (
     <section className="favoritedGIFS">
       {gifFavoriteArray.map((favorite) => (
-        <Card key={favorite.title} sx={{ maxWidth: 345 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={favorite.imageURL}
-            title={favorite.description}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {favorite.title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {favorite.description}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Favorite</Button>
-            <Button size="small">Category</Button>
-          </CardActions>
-        </Card>
+        // FavoritedGIF component
+        <FavoritedGIF favoritedGIF={favorite} key={favorite.title} />
       ))}
     </section>
   );
 }
 
-// Exporting component
 export default Favorites;
