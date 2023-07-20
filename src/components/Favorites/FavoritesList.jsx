@@ -1,17 +1,8 @@
 import * as React from "react";
-// Importing Material UI
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-// Importing CSS
-import "../App/App.css";
 // Importing Components
 import FavoritedGIF from "./FavoritedGIF";
 
-function Favorites() {
+function FavoritesList() {
   const gifFavoriteArray = [
     {
       title: "bearDancing",
@@ -46,4 +37,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+export default FavoritesList;
