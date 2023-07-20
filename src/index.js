@@ -27,6 +27,27 @@ function* rootSaga() {
 // SAGAS
 
 // TODO - GET (from Giphy) - get request (from giphy api)
+function* searchGiphy(action) {
+
+    const inputText = action.payload;
+    const searchQuery = inputText.replace(/ /g, '+')
+
+    console.log('inputText is', inputText)
+    console.log('searchQuery is', searchQuery)
+
+    try {
+        const giphySearchList = yield axios.get(`api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchQuery}&limit=10&rating=pg-13&lang=en&bundle=clips_grid_picker`)
+
+        yield put({ type: 'SET_GIPHY_LIST', payload: giphySearchList})
+
+    } catch (err) {
+        console.log('error getting giphy search', err);
+    }
+
+
+
+}
+
 
 // TODO - POST add favorite (post to DB)
 
@@ -42,8 +63,24 @@ function* rootSaga() {
 // REDUCERS
 
 // TODO - STORE (Giphy results) - store giphy search results (from Giphy)
+const giphySearchList = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_GIPHY_LIST':
+            return action.payload;
+            break;
+
+        default:
+            return state
+            break;
+    }
+
+};
+
+
 
 // TODO - STORE storing list of favorite gifs (from DB)
+
+
 
 // TODO - STORE list of categories (from DB)
 
@@ -57,7 +94,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
-        // lists
+
     }),
     applyMiddleware(logger, sagaMiddleware)
 );
