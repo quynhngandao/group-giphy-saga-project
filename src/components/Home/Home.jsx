@@ -1,7 +1,5 @@
-// import React, { useEffect } from "react";
-// import axios from "axios";
-
 // import components
+import Search from "../Search/Search";
 import Header from "../Header/Header";
 
 function Home() {
@@ -14,6 +12,7 @@ function Home() {
     
     <div className="Home">
       <Header/>
+    <Search/>
      {/* SEARCH: FORM COMPONENT
      DISPLAY: LIST COMPONENT  */}
     </div>

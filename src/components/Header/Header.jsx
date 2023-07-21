@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import Favorites from "../Favorites/Favorites";
@@ -50,12 +50,14 @@ function Header() {
                   <Button
                     variant="outlined"
                     sx={{ color: "#2979ff", fontFamily: "Rubik Bubbles" }}
-                  >HOME </Button>
+                  >
+                    HOME
+                  </Button>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="/favorites"
+                  to="/favorite"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
