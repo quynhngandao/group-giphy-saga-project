@@ -1,7 +1,17 @@
+// Importing Material UI
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+// Importing CSS
+import "../App/App.css";
+
 // FavoritedGIF Component
 function FavoritedGIF({ favoritedGIF }) {
   return (
-    <Card key={favorite.title} sx={{ maxWidth: 345 }}>
+    <Card key={favoritedGIF.title} sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
         image={favoritedGIF.imageURL}
@@ -24,4 +34,4 @@ function FavoritedGIF({ favoritedGIF }) {
 }
 
 // Exporting FavoritedGIF Component
-export default FavoritedGIF
+export default FavoritedGIF;
