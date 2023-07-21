@@ -12,6 +12,7 @@ CREATE TABLE "category" (
 -- gif table
 CREATE TABLE "gif" (
     "id" SERIAL PRIMARY KEY,
+    "title" VARCHAR (280),
     "path" VARCHAR (10000),
     "category_id" integer REFERENCES "category"
 );
