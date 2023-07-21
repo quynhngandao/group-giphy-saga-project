@@ -1,4 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+}
+
+.App,
+.Header {
+  text-align: center;
+  color: #2979ff;
+  font-weight: 800px;
+
+  margin: 0;
+}
+
+.App-header {
+  background-color: #1976d2;
+  min-height: 80px;
+}
+
+.App-title {
+  font-size: 4em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .favoritedGIFS {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
