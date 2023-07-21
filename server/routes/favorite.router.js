@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   //query text for data fields and sql injection 
   const queryText = `INSERT INTO "gif" (path,title)
   VALUES($1, $2)`
-  //redeclaring data fields 
+  //re-declaring data fields 
   const queryParams = [url, title]
   //bringing in pool 
   pool.query(queryText, queryParams)

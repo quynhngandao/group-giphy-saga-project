@@ -30,14 +30,14 @@ function* rootSaga() {
 // TODO - GET (from Giphy) - get request (from giphy api)
 function* searchGiphy(action) {
 
-    const inputText = action.payload;
-    const searchQuery = inputText.replace(/ /g, '+')
+    const searchQuery = action.payload;
 
-    console.log('inputText is', inputText)
     console.log('searchQuery is', searchQuery)
 
     try {
-        const giphySearchList = yield axios.get(`api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchQuery}&limit=10&rating=pg-13&lang=en&bundle=clips_grid_picker`)
+        const giphySearchList = yield axios.get(`api/giphy/${searchQuery}`)
+
+        console.log('giphySearchList is', giphySearchList);
 
         yield put({ type: 'SET_GIPHY_LIST', payload: giphySearchList})
 
@@ -74,6 +74,8 @@ function* fetchCategoryList(action) {
 }
 // TODO - PUT update category of a favorite gif
 
+
+
 // TODO - DELETE remove a favorite gif
 
 // REDUCERS
@@ -95,7 +97,6 @@ const giphySearchList = (state = [], action) => {
 
 
 // TODO - STORE storing list of favorite gifs (from DB)
-
 const favoriteList = (state = [], action) => {
     switch (action.type) {
         case 'SET_FAVORITE':
@@ -115,7 +116,6 @@ const categoryList = (state = [], action) => {
 }
 
 
-
 // COMBINE THEM ALL
 
 const sagaMiddleware = createSagaMiddleware();
@@ -124,7 +124,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
-
         // lists
         favoriteList,
         categoryList,
