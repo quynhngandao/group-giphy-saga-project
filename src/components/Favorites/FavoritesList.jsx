@@ -1,0 +1,49 @@
+import * as React from "react";
+// Importing Material UI
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+// Importing CSS
+import "../App/App.css";
+// Importing Components
+import FavoritedGIF from "./FavoritedGIF";
+
+function Favorites() {
+  const gifFavoriteArray = [
+    {
+      title: "bearDancing",
+      description: "A person in a bear costume dancing with swagger😎",
+      imageURL: "../images/bearDancingGIF.gif",
+    },
+    {
+      title: "sadPikachu",
+      description: "A slow zoom in of a very sad Pikachu",
+      imageURL: "../images/sadPikachu.gif",
+    },
+    {
+      title: "Spongeboy Me Bob Crying",
+      description: "Spongebob crying his heart out in the kitchen",
+      imageURL: "../images/spongbobGIF.gif",
+    },
+    {
+      title: "Thriller Micheal Jackson Eating Popcorn",
+      description:
+        "Thriller Micheal Jackson eating popcorn and smiling in a movie theater",
+      imageURL: "../images/michealBlackson.gif",
+    },
+  ];
+
+  return (
+    <section className="favoritedGIFS">
+      {gifFavoriteArray.map((favorite) => (
+        // FavoritedGIF component
+        <FavoritedGIF favoritedGIF={favorite} key={favorite.title} />
+      ))}
+    </section>
+  );
+}
+
+export default Favorites;
