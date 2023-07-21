@@ -15,9 +15,8 @@
 }
 
 .App-header {
-  background-color: #000000;
+  background-color: #1976d2;
   min-height: 80px;
-  padding: 20px;
 }
 
 .App-title {
@@ -31,4 +30,12 @@
 
 ul {
   list-style-type: none;
+}
+
+.favoritedGIFS {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
 }

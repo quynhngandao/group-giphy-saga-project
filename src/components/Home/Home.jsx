@@ -1,6 +1,7 @@
 // import components
-import Search from "../Search/Search";
-import Header from "../Header/Header";
+import Header from "./Header";
+import FavoritesList from "../Favorites/FavoritesList";
+
 
 function Home() {
 
@@ -12,9 +13,8 @@ function Home() {
     
     <div className="Home">
       <Header/>
-    <Search/>
-     {/* SEARCH: FORM COMPONENT
-     DISPLAY: LIST COMPONENT  */}
+    {/* Display List */}
+    <FavoritesList/>
     </div>
   );
 }
