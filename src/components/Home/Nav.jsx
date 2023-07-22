@@ -61,6 +61,7 @@ function Nav() {
        </ul>
      </div>
    </nav>
+   {/* LINK */}
    <Switch>
      <Route exact path="/"></Route>
      <Route path="/favorite">
