@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 function Nav() {
     const [click, setClick] = useState(false);
@@ -63,7 +63,6 @@ function Nav() {
    </nav>
    {/* LINK */}
    <Switch>
-     <Route exact path="/"></Route>
      <Route path="/favorite">
        {/* <Favorites /> */}
      </Route>

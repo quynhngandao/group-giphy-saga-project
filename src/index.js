@@ -9,19 +9,19 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import { takeLatest, put } from 'redux-saga/effects'
+import { takeLatest, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios';
 
 
 
 // Saga root generator function
 function* rootSaga() {
-    yield takeLatest('SEARCH_GIPHY', searchGiphy)
-    yield takeLatest('ADD_FAVORITE', addFavorite)
-    yield takeLatest('FETCH_FAVORITE_LIST', fetchFavoriteList)
-    yield takeLatest('FETCH_CATEGORY_LIST', fetchCategoryList)
-    yield takeLatest('UPDATE_CATEGORY', updateCategory)
-    yield takeLatest('REMOVE_FAVORITE', removeFavorite)
+    yield takeEvery('SEARCH_GIPHY', searchGiphy)
+    // yield takeLatest('ADD_FAVORITE', addFavorite)
+    // yield takeLatest('FETCH_FAVORITE_LIST', fetchFavoriteList)
+    // yield takeLatest('FETCH_CATEGORY_LIST', fetchCategoryList)
+    // yield takeLatest('UPDATE_CATEGORY', updateCategory)
+    // yield takeLatest('REMOVE_FAVORITE', removeFavorite)
 }; // end rootSaga
 
 
@@ -35,11 +35,11 @@ function* searchGiphy(action) {
     console.log('searchQuery is', searchQuery)
 
     try {
-        const giphySearchList = yield axios.get(`api/giphy/${searchQuery}`)
+        const giphySearchList = yield axios.get(`/api/search/${searchQuery}`)
 
         console.log('giphySearchList is', giphySearchList);
 
-        yield put({ type: 'SET_GIPHY_LIST', payload: giphySearchList})
+        yield put({ type: 'SET_GIPHY_LIST', payload: giphySearchList.data.data})
 
     } catch (err) {
         console.log('error getting giphy search', err);
@@ -85,14 +85,14 @@ const giphySearchList = (state = [], action) => {
     switch (action.type) {
         case 'SET_GIPHY_LIST':
             return action.payload;
-            break;
-
+            console.log('action', action);
         default:
             return state
-            break;
+         
     }
 
 };
+
 
 
 

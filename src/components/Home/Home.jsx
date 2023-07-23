@@ -2,7 +2,6 @@
 import Header from "./Header";
 import FavoritesList from "../Favorites/FavoritesList";
 
-
 function Home() {
 
   //  FETCH API from '/
