@@ -1,0 +1,15 @@
+
+ul {
+    list-style-type: none;
+  }
+  
+  .favoritedGIFS {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 20px;
+      row-gap: 60px;
+      justify-content: space-evenly;
+  }
+  
+  
