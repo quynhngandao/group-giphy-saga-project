@@ -1,5 +1,4 @@
 import SearchAppBar from "./SearchAppBar";
-
 // Style
 import "./Header.css";
 

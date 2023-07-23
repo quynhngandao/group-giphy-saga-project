@@ -38,9 +38,9 @@ function Nav() {
            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
              <Button
                variant="outlined"
-               sx={{ color: "white", fontFamily: "Roboto" }}
+               sx={{ color: "white", fontFamily: "Roboto",  border:1 }}
              >
-               HOME
+               Home
              </Button>
            </Link>
          </li>
@@ -52,7 +52,7 @@ function Nav() {
            >
              <Button
                variant="outlined"
-               sx={{ color: "white", fontFamily: "Roboto" }}
+               sx={{ color: "white", fontFamily: "Roboto", border:1 }}
              >
               Favorite
              </Button>
@@ -62,9 +62,9 @@ function Nav() {
      </div>
    </nav>
    {/* LINK */}
+
    <Switch>
      <Route path="/favorite">
-       {/* <Favorites /> */}
      </Route>
    </Switch>
  </Router>

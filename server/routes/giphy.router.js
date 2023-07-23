@@ -15,7 +15,7 @@ router.get('/:search', (req, res) => {
   console.log('search is:', req.params.search)
 
 
-  axios.get(`http://api.giphy.com/v1/gifs/search?api_key=TI6iPmBlG62XP8nouEjiVHQGG5o66pt2&q=${searchQuery}&limit=4`)
+  axios.get(`http://api.giphy.com/v1/gifs/search?api_key=TI6iPmBlG62XP8nouEjiVHQGG5o66pt2&q=${searchQuery}&limit=6`)
     .then((result) => {
       res.send(result.data)
     }).catch((err) => {

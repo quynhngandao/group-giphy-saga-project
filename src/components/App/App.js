@@ -1,9 +1,13 @@
-import Home from "../Home/Home";
+import Header from "../Home/Header"
 import './App.css'
+import FavoritesList from "../Favorites/FavoritesList";
 
 function App() {
   return (
-   <Home/>
+    <>
+<Header/>
+<FavoritesList/>
+   </>
   );
 }
 

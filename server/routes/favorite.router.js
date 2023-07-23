@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     console.log(`error in query${error}`);
     res.sendStatus(500)
   })
-  res.sendStatus(200);
+
 });
 
 // add a new favorite
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
       console.log(`error making query ${queryText}`, error);
       res.sendStatus(500)
     })
-  res.sendStatus(200);
+
 });
 
 // update given favorite with a category id
