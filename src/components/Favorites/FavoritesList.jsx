@@ -19,12 +19,6 @@ function FavoritesList() {
       description: "Spongebob crying his heart out in the kitchen",
       imageURL: "../images/spongbobGIF.gif",
     },
-    {
-      title: "Thriller Micheal Jackson Eating Popcorn",
-      description:
-        "Thriller Micheal Jackson eating popcorn and smiling in a movie theater",
-      imageURL: "../images/michealBlackson.gif",
-    },
   ];
 
   return (

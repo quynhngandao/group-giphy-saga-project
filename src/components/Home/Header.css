@@ -58,9 +58,6 @@
     display: none;
   }
   
-  .menu-icon {
-    display: none;
-  }
   
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -103,6 +100,8 @@
     .fa-times {
       color: #fff;
       font-size: 2rem;
+      font-family: sans-serif;
+      font-weight: bold;
     }
   
     .nav-links-mobile {
